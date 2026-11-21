@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Julián Uribe | Portafolio Profesional</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #e8f5ed;
+            color: #263445;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #064e3b;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            color: #6ee7b7;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #6ee7b7;
+        }
+
+        /* PRESENTACIÓN */
+
+        .hero {
+            background: linear-gradient(135deg, #064e3b, #059669);
+            color: white;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h3 {
+            color: #a7f3d0;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #ecfdf5;
+            margin-bottom: 25px;
+        }
+
+        /* BOTONES */
+
+        .btn {
+            display: inline-block;
+            background: #6ee7b7;
+            color: #064e3b;
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin: 7px 5px 7px 0;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-pdf {
+            background: white;
+            color: #047857;
+            border: 2px solid #6ee7b7;
+        }
+
+        .btn-pdf:hover {
+            background: #d1fae5;
+        }
+
+        /* SECCIONES */
+
+        .section {
+            padding: 65px 8%;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            color: #064e3b;
+            margin-bottom: 30px;
+            border-left: 5px solid #10b981;
+            padding-left: 15px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 1100px;
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        /* TARJETAS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-bottom: 4px solid #10b981;
+            break-inside: avoid;
+        }
+
+        .card h3 {
+            color: #047857;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #536273;
+        }
+
+        /* CONTACTO */
+
+        .contact {
+            background: #064e3b;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+            border-left-color: #6ee7b7;
+        }
+
+        .contact-info p {
+            margin: 14px 0;
+            font-size: 16px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a {
+            color: #6ee7b7;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #022c22;
+            color: #d1fae5;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        /* ADAPTACIÓN A MÓVILES */
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .hero {
+                padding: 60px 7%;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .section {
+                padding: 45px 7%;
+            }
+        }
+
+        /* CONFIGURACIÓN PARA GENERAR PDF */
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        @media print {
+
+            body {
+                background: white;
+                color: #263445;
+                font-size: 11pt;
+            }
+
+            header nav,
+            .btn,
+            footer {
+                display: none !important;
+            }
+
+            header {
+                padding: 15px 0;
+            }
+
+            .hero {
+                padding: 35px 25px;
+                background: #064e3b !important;
+                color: white !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .section {
+                padding: 25px 0;
+            }
+
+            .about,
+            .card,
+            .contact {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #d1fae5;
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            section {
+                break-inside: auto;
+            }
+
+            .card {
+                break-inside: avoid;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+        <h2>JU | Portafolio</h2>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#perfil">Perfil</a>
+            <a href="#formacion">Formación</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- PRESENTACIÓN -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>Julián Uribe</h1>
+
+            <h3>Administrador Tecnológico</h3>
+
+            <p>
+                Estudiante de sexto semestre de Administración
+                Tecnológica en la Institución Universitaria ITM,
+                interesado en la gestión empresarial, la tecnología
+                y la optimización de procesos organizacionales.
+            </p>
+
+            <a href="#contacto" class="btn">
+                Contáctame
+            </a>
+
+            <!-- BOTÓN DE DESCARGA PDF -->
+
+            <button
+                class="btn btn-pdf"
+                onclick="descargarPDF()">
+
+                ↓ Descargar portafolio en PDF
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PERFIL PROFESIONAL -->
+
+    <section class="section about" id="perfil">
+
+        <h2>Perfil profesional</h2>
+
+        <p>
+            Es un ciudadano global que cuenta con formación integral,
+            con cualidades éticas y de autonomía para su desarrollo
+            profesional, con capacidad para planear, organizar,
+            dirigir, controlar y evaluar los procesos de gestión
+            del conocimiento, tecnología e innovación, alineándolos
+            con la estrategia para el logro de los objetivos de las
+            organizaciones en las que interviene, lo cual le permite
+            tomar decisiones en contextos complejos, dinámicos e inciertos.
+        </p>
+
+    </section>
+
+    <!-- FORMACIÓN ACADÉMICA -->
+
+    <section class="section" id="formacion">
+
+        <h2>Formación académica</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Administración Tecnológica</h3>
+
+                <p>
+                    Institución Universitaria ITM
+                </p>
+
+                <p>
+                    Sexto semestre en curso.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIENCIA LABORAL -->
+
+    <section class="section" id="experiencia">
+
+        <h2>Experiencia laboral</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Analista de Costos y Presupuestos</h3>
+
+                <p>
+                    <strong>Empresa:</strong> Flamingo
+                </p>
+
+                <p>
+                    Experiencia en el área de costos y presupuestos,
+                    participando en procesos de análisis y gestión
+                    de información financiera y presupuestal.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INFORMACIÓN PERSONAL -->
+
+    <section class="section">
+
+        <h2>Información personal</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Datos personales</h3>
+
+                <p>
+                    <strong>Nombre:</strong> Julián Uribe
+                </p>
+
+                <p>
+                    <strong>Edad:</strong> 55 años
+                </p>
+
+                <p>
+                    <strong>Perfil:</strong> Administrador tecnológico
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="section contact" id="contacto">
+
+        <h2>Contacto</h2>
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Correo electrónico:</strong>
+
+                <a href="mailto:julianuribe8729@correo.itm.edu.co">
+                    julianuribe8729@correo.itm.edu.co
+                </a>
+            </p>
+
+            <p>
+                <strong>Dirección:</strong>
+                Transversal A # 87 B 98
+            </p>
+
+            <p>
+                <strong>Documento de identidad:</strong>
+                1128415907
+            </p>
+
+            <p>
+                <strong>Profesión:</strong>
+                Administrador Tecnológico (en formación)
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            © 2026 Julián Uribe - Portafolio Profesional
+        </p>
+
+        <p>
+            Desarrollado en HTML y CSS
+        </p>
+
+    </footer>
+
+    <!-- FUNCIÓN JAVASCRIPT PARA PDF -->
+
+    <script>
+
+        function descargarPDF() {
+
+            // Abre el cuadro de impresión del navegador.
+            // Seleccionar "Guardar como PDF" para descargar.
+
+            window.print();
+
+        }
+
+    </script>
+
+</body>
+</html>
